@@ -1,0 +1,47 @@
+.table {
+    table-layout: auto;
+    width: 100%;
+
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    border-radius: 10px;
+    border-spacing: 0 0;
+    
+    th.row:hover{
+        cursor: pointer;
+        transition: 0.3s;
+        color: green;
+        &:active {
+            transform: rotate(90deg);
+        }
+
+    }
+    .thead {
+        color: white;
+        background-color: #000;
+        cursor: pointer;
+    }
+    th,tr {
+        transition: 0.3s;
+        font-size: 12px;
+        line-height: 40px;
+        padding: 2px 30px;
+    }
+ 
+    tbody tr:nth-child(even) {
+        background-color: #f6f6f6;
+      }
+    .thead-row{
+        transition: 0.3s;
+        :hover{
+            transition: 0.3s;
+            background: rgb(143, 143, 143);
+            border-radius: 8px;
+        }
+        :active {
+            background: rgba(0, 128, 0, 0.626);
+        }
+    }
+
+}
