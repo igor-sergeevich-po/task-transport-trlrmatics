@@ -12,6 +12,7 @@
         cursor: pointer;
         transition: 0.3s;
         color: green;
+       
         &:active {
             transform: rotate(90deg);
         }
@@ -21,6 +22,9 @@
         color: white;
         background-color: #000;
         cursor: pointer;
+        .active-column {
+            color: gold;
+        }
     }
     th,tr {
         transition: 0.3s;
@@ -32,6 +36,13 @@
     tbody tr:nth-child(even) {
         background-color: #f6f6f6;
       }
+    
+    tbody tr.filtered-column{
+         
+            display: none;
+            background: #000;
+        
+    }
     .thead-row{
         transition: 0.3s;
         :hover{

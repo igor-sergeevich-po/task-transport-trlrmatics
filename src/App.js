@@ -1,12 +1,15 @@
 import './App.css';
 import './style.scss';
 import { Header } from './components/Header/Header'
+import { UsersProvider } from './components/hoc/UsersProvider';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-    </div>
+    <UsersProvider>
+      <div className="App">
+        <Header />
+      </div>
+    </UsersProvider>
   );
 }
 
