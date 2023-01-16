@@ -48,11 +48,9 @@
         :hover{
             transition: 0.3s;
             background: rgb(143, 143, 143);
-            border-radius: 50px;
         }
         :active {
             background: rgba(0, 128, 0, 0.626);
-            border-radius: 0;
         }
     }
 
