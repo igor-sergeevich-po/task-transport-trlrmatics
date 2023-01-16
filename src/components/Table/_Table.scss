@@ -8,8 +8,10 @@
     border-radius: 10px;
     border-spacing: 0 0;
     tr.active-line {
+        transition: 0.1s;
         &:hover {
-            color: rgb(188, 161, 9);
+            color: rgb(255, 255, 255);
+            background-color: rgba(55, 80, 61, 0.55);
         }
     }
     th.row:hover{
