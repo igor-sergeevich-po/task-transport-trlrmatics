@@ -12,7 +12,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { MoreInfoItem } from '../MoreInfoItem/MoreInfoItem';
 
 export const Table = () => {
-  const {actualLimitedArray, currentRowInfo, setCurrentRowInfo, userTable, dataIsSorted, setDataIsSorted, setActiveColumn} = useContext(UsersContext)
+  const {actualLimitedArray, currentRowInfo, setCurrentRowInfo, userTable, dataIsSorted, setDataIsSorted, activeColumn, setActiveColumn} = useContext(UsersContext)
  
   const getMoreInfo = (item) => {
   // const ghostRow = document.querySelector('.grow')
@@ -34,7 +34,7 @@ export const Table = () => {
               <th onClick={(e)=>getSortToEmail(e, userTable, dataIsSorted, setDataIsSorted, setActiveColumn)} className='column column__email' >email</th>
               <th onClick={(e)=>getSortToId(e, userTable, dataIsSorted, setDataIsSorted, setActiveColumn)} className='column column__id' >id</th>
               <th onClick={(e)=>getSortToName(e, userTable, dataIsSorted, setDataIsSorted, setActiveColumn)}  className='column column__name' >name</th>
-              <th onClick={(e)=>getSortToPhone(e, userTable, dataIsSorted, setDataIsSorted, setActiveColumn)} className='column column__phone' >phone</th>
+              <th onClick={(e)=>getSortToPhone(e, userTable, dataIsSorted, setDataIsSorted, activeColumn, setActiveColumn)} className='column column__phone' >phone</th>
               <th onClick={(e)=>getSortToUserName(e, userTable, dataIsSorted, setDataIsSorted, setActiveColumn)} className='column column__user-name' >user-name</th>
               <th onClick={(e)=>getSortToWebsite(e, userTable, dataIsSorted, setDataIsSorted, setActiveColumn)} className='column column__website' >website</th>
             </tr>

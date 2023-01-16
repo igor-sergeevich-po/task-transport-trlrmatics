@@ -18,15 +18,17 @@ export const UsersProvider = ({children}) => {
 
     const lastUserInList = currentPageNumber * limitNumberUsers;
     const firstUserInList = lastUserInList - limitNumberUsers;
-    const actualLimitedArray = userTable.slice(firstUserInList, lastUserInList)
+    const actualLimitedArray =  userTable.slice(firstUserInList, lastUserInList)
 
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/users?_limit=12')
+
+        fetch('https://jsonplaceholder.typicode.com/users')
         .then(resp => resp.json())
         .then(data => setUserTable(data))
-    }, [])
 
+    }, [])
+        
     useEffect(() => {
     setInterval(() => {
       if(userTable.length){

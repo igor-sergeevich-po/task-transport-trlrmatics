@@ -3,10 +3,16 @@
     list-style: none;
     justify-content: flex-end;
     padding: 0 15px;
-    gap: 8px;
-
+    gap: 10px;
+    font-size: 12px;
+    transition: 0.3s;
+    
     .page-link {
         text-decoration: none;
-        
+
+        &:hover {
+            color:gray;
+            text-decoration: underline;
+        }    
     }
 }
