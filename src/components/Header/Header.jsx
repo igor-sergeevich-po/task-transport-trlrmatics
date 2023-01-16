@@ -3,27 +3,21 @@ import { Table } from '../Table/Table';
 import PDF from '../../assets/svg/pdf.svg'
 import XLSX from '../../assets/svg/xlsx.svg'
 import { Pagination } from '../Pagination/Pagination';
-
+import { useContext } from 'react';
+import { UsersContext } from '../hoc/UsersProvider';
+import { getFilterUsers } from '../helpFun/getFilterUsers';
+import { getPDFtable } from '../helpFun/getPDFtable';
+import 'jspdf-autotable';
+import { getXLSXtable } from '../helpFun/getXLSXtable';
 
 export const Header = () => {
-const getFilterUsers=(e) => {
-    const input = e.target.value;
-    const users = document.querySelectorAll('tbody tr')
-    users.forEach(item=> {
-        
-        const start = item.innerHTML.indexOf('id">')
-        const end = +start+5
-        const test = +item.innerHTML.slice(start,end).match(/[0-9]/g).join('')
-        if(+test !== +input){
-            item.classList.add('filtered-column')
-        }
+    const {activeColumn, setLimitNumberUsers,} = useContext(UsersContext);
+    
+    const handleSetLimitUsersOnPage = (e) => {
+        const limit = e.target.value
+        setLimitNumberUsers(limit)
+    }
 
-        if(input === '') {
-            item.classList.remove('filtered-column')
-        }
-    })
-
-}
   return (
     <div className='wrapper'>
         <div className='header'>
@@ -31,19 +25,19 @@ const getFilterUsers=(e) => {
                 <div className="container">
                     <div className="pagination">
                         <p className="pagination__text">Показывать</p>
-                        <select className="pagination__selector"> 
-                            <option className='selector__item' value={1}>3</option> 
-                            <option className='selector__item' value={2}>5</option> 
-                            <option className='selector__item' value={3}>10</option> 
-                            <option className='selector__item' value={4}>15</option> 
+                        <select defaultValue='10' onChange={(e) => handleSetLimitUsersOnPage(e)} className="pagination__selector"> 
+                            <option  className='selector__item' value={3}>3</option> 
+                            <option className='selector__item' value={5}>5</option> 
+                            <option  className='selector__item' value={10}>10</option> 
+                            <option className='selector__item' value={15}>15</option> 
                         </select>
                     </div>
                     <div className="download-buttons">
-                        <div className="download-buttons__item">
+                        <div className="download-buttons__item" onClick={()=> getPDFtable()}>
                             <img className='download-buttons__item-svg' src={PDF} alt="download pdf file" />
                             <p className='download-buttons__item-text'>PDF</p>
                         </div>
-                        <div className="download-buttons__item">
+                        <div className="download-buttons__item" onClick={()=> getXLSXtable('xlsx', 'firstsheet')}>
                             <img className='download-buttons__item-svg' src={XLSX} alt="download xlsx file"/>
                             <p className='download-buttons__item-text'>XLSX</p>
                         </div>
@@ -53,7 +47,7 @@ const getFilterUsers=(e) => {
                     <label className='search-label'>
                     <p className='search-form__info'>Поиск</p>
                 
-                    <input onChange={(e)=>getFilterUsers(e)} className='input' type="text" placeholder='?'/>
+                    <input onChange={(e)=>getFilterUsers(e, activeColumn)} className='input' type="text" placeholder='?'/>
                     </label>
                 </div>
             </div>

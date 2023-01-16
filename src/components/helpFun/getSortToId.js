@@ -3,6 +3,7 @@ export   const getSortToId = (e, userTable, dataIsSorted, setDataIsSorted, setAc
 
     document.querySelectorAll('th').forEach(item => item.classList.remove('active-column'));
     e.target.classList.add('active-column');
+    setActiveColumn(e.target.innerText)
   if(dataIsSorted) {
     // e.target.innerText = 'id ▲'
     userTable.sort((a, b) => {
