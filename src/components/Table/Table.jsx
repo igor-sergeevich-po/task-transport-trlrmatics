@@ -14,13 +14,24 @@ import { MoreInfoItem } from '../MoreInfoItem/MoreInfoItem';
 export const Table = () => {
   const {actualLimitedArray, currentRowInfo, setCurrentRowInfo, userTable, dataIsSorted, setDataIsSorted, activeColumn, setActiveColumn} = useContext(UsersContext)
  
+
+
   const getMoreInfo = (item) => {
-  // const ghostRow = document.querySelector('.grow')
-  // ghostRow.classList.add('ghost')
-  // console.log(ghostRow)
-  setCurrentRowInfo(item)
-  // console.log(currentRowInfo)
- }
+
+    let calculateGrayLine = document.querySelectorAll('tr')
+    // for(let i=0; i< calculateGrayLine.length; i+3) {
+      
+        
+    //     calculateGrayLine[i].classList.add('tr_gray')
+      
+    // }
+    setTimeout(() => {
+     const currenUser = document.getElementById(`${item.company.name}`)
+     currenUser.classList.toggle('hidden-row')
+    }, 50)
+
+   setCurrentRowInfo(item)
+  }
 
 
 
@@ -42,16 +53,32 @@ export const Table = () => {
           <tbody>
               {actualLimitedArray.map(item => {
                 return (
-                  <tr key={uuidv4()} className='active-line' >
-                    <th className="row" onClick={()=> getMoreInfo(item)}>&#10148;</th>
-                    <td className="company">{item.company.name}</td>
-                    <td className="email">{item.email}</td>
-                    <td className="id">{item.id}</td>
-                    <td className="name">{item.name}</td>
-                    <td className="phone">{item.phone}</td>
-                    <td className="user-name">{item.username}</td>
-                    <td className="website">{item.website}</td>
-                  </tr>
+                  <>
+                    <tr key={uuidv4()} className='active-line' >
+                      <th className="row" onClick={()=> getMoreInfo(item)}>&#10148;</th>
+                      <td className="company">{item.company.name}</td>
+                      <td className="email">{item.email}</td>
+                      <td className="id">{item.id}</td>
+                      <td className="name">{item.name}</td>
+                      <td className="phone">{item.phone}</td>
+                      <td className="user-name">{item.username}</td>
+                      <td className="website">{item.website}</td>
+                    </tr>
+                    <tr key={uuidv4()} id={item.company.name} className="ghost hidden-row">
+                        <td colSpan='2'></td>
+                        <td colSpan='2'>
+                          <p>city: {item.address.city}</p>
+                          <p>street: {item.address.street}</p>
+                          <p>suite: {item.address.suite}</p>
+                          <p>zipcode: {item.address.zipcode}</p>
+                        </td>
+                        <td colSpan='2'>
+                          <p>bs: {item.company.bs}</p>
+                          <p>catchPhrase: {item.company.catchPhrase}</p>
+                        </td>
+                        <td colSpan='2'></td>
+                    </tr>
+                  </>
             )
         })}
 

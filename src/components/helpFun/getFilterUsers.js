@@ -1,6 +1,6 @@
 export const getFilterUsers=(e, activeColumn) => {
     const input = e.target.value;
-    const users = document.querySelectorAll('tbody tr')
+    const users = document.querySelectorAll('.active-line')
     users.forEach(item=> {
         item.classList.remove('filtered-column')
         let testCeilText = (item.querySelector(`.${activeColumn}`).innerText).toLowerCase()

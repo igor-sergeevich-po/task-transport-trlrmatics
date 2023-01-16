@@ -1,12 +1,17 @@
 .table {
     table-layout: auto;
     width: 100%;
-
     text-align: center;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     border-radius: 10px;
     border-spacing: 0 0;
+    th.active-column {
+        color: gold;
+    }
+    tr.hidden-row {
+        display: none;
+    }
     tr.active-line {
         transition: 0.1s;
         &:hover {
@@ -24,11 +29,11 @@
         }
 
     }
-    .thead {
+    thead tr {
         color: white;
         background-color: #000;
         cursor: pointer;
-        .active-column {
+        th.active-column {
             color: gold;
         }
     }
@@ -39,7 +44,10 @@
         padding: 2px 30px;
     }
  
-    tbody tr:nth-child(even) {
+    // tbody tr:nth-child(even) {
+    //     background-color: #f6f6f6;
+    //   }
+          tbody tr.tr_gray{
         background-color: #f6f6f6;
       }
     

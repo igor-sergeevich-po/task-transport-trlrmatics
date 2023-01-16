@@ -26,7 +26,6 @@ export const UsersProvider = ({children}) => {
         fetch('https://jsonplaceholder.typicode.com/users')
         .then(resp => resp.json())
         .then(data => setUserTable(data))
-
     }, [])
         
     useEffect(() => {
