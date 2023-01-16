@@ -7,7 +7,11 @@
     font-size: 14px;
     border-radius: 10px;
     border-spacing: 0 0;
-
+    tr.active-line {
+        &:hover {
+            color: rgb(188, 161, 9);
+        }
+    }
     th.row:hover{
         cursor: pointer;
         transition: 0.3s;

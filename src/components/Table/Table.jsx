@@ -42,7 +42,7 @@ export const Table = () => {
           <tbody>
               {actualLimitedArray.map(item => {
                 return (
-                  <tr key={uuidv4()} >
+                  <tr key={uuidv4()} className='active-line' >
                     <th className="row" onClick={()=> getMoreInfo(item)}>&#10148;</th>
                     <td className="company">{item.company.name}</td>
                     <td className="email">{item.email}</td>
