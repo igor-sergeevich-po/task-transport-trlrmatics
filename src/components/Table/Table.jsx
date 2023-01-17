@@ -30,7 +30,7 @@ export const Table = () => {
           <thead className='thead'>
             <tr className='thead-row'>
               <th className='column column__#' ></th>
-              <th onClick={(e)=>getSortToCompany(e, userTable, dataIsSorted, setDataIsSorted, setActiveColumn)} className='column column__company' >company</th>
+              <th onClick={(e)=>getSortToCompany(e, userTable, dataIsSorted, setDataIsSorted, setActiveColumn)} className='column column__company active-column' >company</th>
               <th onClick={(e)=>getSortToEmail(e, userTable, dataIsSorted, setDataIsSorted, setActiveColumn)} className='column column__email' >email</th>
               <th onClick={(e)=>getSortToId(e, userTable, dataIsSorted, setDataIsSorted, setActiveColumn)} className='column column__id' >id</th>
               <th onClick={(e)=>getSortToName(e, userTable, dataIsSorted, setDataIsSorted, setActiveColumn)}  className='column column__name' >name</th>
