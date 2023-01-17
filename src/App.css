@@ -1,3 +1,6 @@
+::-webkit-scrollbar {
+  width: 0;
+}
 .App {
   box-sizing: border-box;
   text-align: center;
