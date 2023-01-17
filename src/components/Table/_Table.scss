@@ -44,12 +44,9 @@
         padding: 2px 30px;
     }
  
-    // tbody tr:nth-child(even) {
-    //     background-color: #f6f6f6;
-    //   }
-          tbody tr.tr_gray{
-        background-color: #f6f6f6;
-      }
+    .tr_gray{
+    background-color: #f7f7f7;
+    }
     
     tbody tr.filtered-column{
          

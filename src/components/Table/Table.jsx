@@ -10,21 +10,12 @@ import { getSortToUserName } from '../helpFun/getSortToUserName';
 import { getSortToPhone } from '../helpFun/getSortToPhone';
 import { v4 as uuidv4 } from 'uuid';
 import { MoreInfoItem } from '../MoreInfoItem/MoreInfoItem';
+import { useEffect } from 'react';
 
 export const Table = () => {
   const {actualLimitedArray, currentRowInfo, setCurrentRowInfo, userTable, dataIsSorted, setDataIsSorted, activeColumn, setActiveColumn} = useContext(UsersContext)
  
-
-
   const getMoreInfo = (item) => {
-
-    let calculateGrayLine = document.querySelectorAll('tr')
-    // for(let i=0; i< calculateGrayLine.length; i+3) {
-      
-        
-    //     calculateGrayLine[i].classList.add('tr_gray')
-      
-    // }
     setTimeout(() => {
      const currenUser = document.getElementById(`${item.company.name}`)
      currenUser.classList.toggle('hidden-row')
@@ -32,8 +23,6 @@ export const Table = () => {
 
    setCurrentRowInfo(item)
   }
-
-
 
   return (
       <React.Fragment>
@@ -51,10 +40,14 @@ export const Table = () => {
             </tr>
           </thead>
           <tbody>
-              {actualLimitedArray.map(item => {
+              {actualLimitedArray.map((item, index) => {
+                let isNeedIndex = true
+                    if (index % 2 === 0){
+                      isNeedIndex = false
+                    }
                 return (
                   <>
-                    <tr key={uuidv4()} className='active-line' >
+                    <tr key={uuidv4()} className={`active-line ${(isNeedIndex)? 'tr_gray': ''}`} >
                       <th className="row" onClick={()=> getMoreInfo(item)}>&#10148;</th>
                       <td className="company">{item.company.name}</td>
                       <td className="email">{item.email}</td>
