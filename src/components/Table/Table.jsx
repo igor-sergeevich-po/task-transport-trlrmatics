@@ -48,14 +48,14 @@ export const Table = () => {
                 return (
                   <>
                     <tr key={uuidv4()} className={`active-line ${(isNeedIndex)? 'tr_gray': ''}`} >
-                      <th className="row" onClick={()=> getMoreInfo(item)}>&#10148;</th>
-                      <td className="company">{item.company.name}</td>
-                      <td className="email">{item.email}</td>
-                      <td className="id">{item.id}</td>
-                      <td className="name">{item.name}</td>
-                      <td className="phone">{item.phone}</td>
-                      <td className="user-name">{item.username}</td>
-                      <td className="website">{item.website}</td>
+                      <th id='row-info' className="row" onClick={()=> getMoreInfo(item)}>&#10148;</th>
+                      <td id='row-info' className="company">{item.company.name}</td>
+                      <td id='row-info' className="email">{item.email}</td>
+                      <td id='row-info' className="id">{item.id}</td>
+                      <td id='row-info' className="name">{item.name}</td>
+                      <td id='row-info' className="phone">{item.phone}</td>
+                      <td id='row-info' className="user-name">{item.username}</td>
+                      <td id='row-info' className="website">{item.website}</td>
                     </tr>
                     <tr key={uuidv4()} id={item.company.name} className="ghost hidden-row">
                         <td colSpan='2'></td>
