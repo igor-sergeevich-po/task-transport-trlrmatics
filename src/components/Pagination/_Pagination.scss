@@ -11,8 +11,6 @@
         padding: 0 15px;
         font-size: 1rem;
         font-weight:900;
-        // gap: 10px;
-        
         .page-item {
             transition: 0.3s;
             padding: 8px;
@@ -20,16 +18,39 @@
                 transition: 0.3s;
                 text-decoration: none;
                 color: #000;
+                
             }
+         
             &:hover {
-                color:green;
+                
                 transform: translateY(-5px);
                 cursor: pointer;
-                // text-decoration: underline;
                 .page-link {
                     color: green;
                 }
-            }  
+            }
+  
+           
         }
+        .page-item.isDisabled {
+            // font-size: 22px;
+            color: rgb(220, 101, 101);
+            font-weight:100;
+            &:hover {
+                cursor: default;
+                
+                
+                transform: translateY(0px);
+                .page-link {
+                    cursor: default;
+                    opacity: 0.5;
+                    color: rgb(213, 212, 212);
+                }
+            }
+        }
+        // li.isDisabled {
+        //     // font-size: 22px;
+        //     color: white;
+        // }
     }
 }

@@ -21,16 +21,20 @@ export const Pagination = () => {
         <nav className='nav' aria-label="...">
             <p>{`page ${currentPageNumber} из ${totalNumberPages}`}</p>
             <ul className="pagination-nav">
-              <li  key={uuid()} onClick={() => handleChangeCurrentPage (1) } className="page-item">
-                  <a className="page-link" href="#">{`<<`}</a>
+              <li key={uuid()} onClick={() => handleChangeCurrentPage (1) } className={
+                  `page-item ${currentPageNumber == 1? 'isDisabled': ''}`}>
+                  <a  className="page-link" href="#">{`<<`}</a>
               </li>
-              <li  key={uuid()} onClick={() => handleChangeCurrentPage ('-') } className="page-item">
+              <li  key={uuid()} onClick={() => handleChangeCurrentPage ('-') } className={
+                  `page-item ${currentPageNumber == 1? 'isDisabled': ''}`}>
                   <a className="page-link" href="#">{`<`}</a>
               </li>
-              <li  key={uuid()} onClick={() => handleChangeCurrentPage ('+') } className="page-item">
+              <li  key={uuid()} onClick={() => handleChangeCurrentPage ('+') } className={
+                  `page-item ${currentPageNumber == totalNumberPages? 'isDisabled': ''}`}>
                   <a  className="page-link" href="#">{`>`}</a>
               </li>
-              <li  key={uuid()} onClick={() => handleChangeCurrentPage (-1) } className="page-item">
+              <li  key={uuid()} onClick={() => handleChangeCurrentPage (-1) } className={
+                  `page-item ${currentPageNumber == totalNumberPages? 'isDisabled': ''}`}>
                   <a  className="page-link" href="#">{`>>`}</a>
               </li>
             </ul>
