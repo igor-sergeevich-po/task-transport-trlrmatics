@@ -18,8 +18,7 @@
                     align-items: inherit;
                     gap: inherit;
                     transition: 0.3s;
-                 
-                                        
+                      
                     .pagination__text {
 
                     }
@@ -54,9 +53,6 @@
                             color: white;
                             background: #000;
                            }
-                  
-
-
                     }
                 }
                 .download-buttons {
@@ -77,7 +73,6 @@
                         .download-buttons__item-text {
                             text-align: center;
                             margin: 4px 6px;
-                            
                         }
                         &:hover{
                             transition: 0.3s;
@@ -93,48 +88,63 @@
                 }
             }
             .search-form {
+                cursor: pointer;
+                padding: 15px 5px 15px 45px;
+                :hover {
+                    .input {
+                        border-bottom: 2px solid rgb(92, 85, 218);
+                    }
+                    .search-form__info {
+                        color:rgb(92, 85, 218) ;
+                    }
+                }
                 .input {
                     width: 80%;
                     margin-right: 20px;
                     cursor: pointer;
-                    // background-image: url(../../assets/svg/search.svg);
-                    // background-position: 10px 10px;
-                    // background-repeat: no-repeat;
                     padding: 5px;
                     border: none;
                     border-bottom: 2px solid #000 ;
                     outline: none;
                     transition: 0.3s;
+                    &:hover {
+                        border-bottom: 2px solid rgb(92, 85, 218);
+                    }
+                    &:focus {
+                        border-bottom: 2px solid rgb(92, 85, 218);
+                    }
                     &::placeholder {
                         color: rgb(136, 134, 134);
                         text-align: right;
-
                     }
-                
                 }
                 .search-form__info {
                     position: absolute;
                     top: 45px;
                     color: gray;
-                  
+                    cursor: pointer;
                     font-size: 14px;
                     padding-left: 10px;
                     transition: 0.3s;
- 
+                    &:hover {
+                        color: rgb(92, 85, 218);
+                    }
                 }
                 :focus-within {
                         .search-form__info {
                             font-size: 12px;
                             top: 30px;
                             color: rgb(92, 85, 218);
-                 
-                        
                         }
                    }
-      
-                
-             
-
+            }
+            .search-form:hover {
+                .input {
+                    border-bottom: 2px solid rgb(92, 85, 218);
+                }
+                .search-form__info {
+                    color:rgb(92, 85, 218) ;
+                }
             }
     
         }
