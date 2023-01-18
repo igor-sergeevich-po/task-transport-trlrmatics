@@ -1,18 +1,35 @@
-.pagination-nav {
+.nav {
     display: flex;
-    list-style: none;
     justify-content: flex-end;
-    padding: 0 15px;
-    gap: 10px;
-    font-size: 12px;
-    transition: 0.3s;
-    
-    .page-link {
-        text-decoration: none;
-
-        &:hover {
-            color:gray;
-            text-decoration: underline;
-        }    
+    gap: 5px;
+    font-size: 14px;
+    align-items: center;
+    .pagination-nav {
+        display: flex;
+        list-style: none;
+        justify-content: flex-end;
+        padding: 0 15px;
+        font-size: 1rem;
+        font-weight:900;
+        // gap: 10px;
+        
+        .page-item {
+            transition: 0.3s;
+            padding: 8px;
+            .page-link {
+                transition: 0.3s;
+                text-decoration: none;
+                color: #000;
+            }
+            &:hover {
+                color:green;
+                transform: translateY(-5px);
+                cursor: pointer;
+                // text-decoration: underline;
+                .page-link {
+                    color: green;
+                }
+            }  
+        }
     }
 }
