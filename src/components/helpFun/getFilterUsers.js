@@ -11,5 +11,4 @@ export const getFilterUsers=(e, activeColumn) => {
             item.classList.add('filtered-column')
         }
     })
-
 }

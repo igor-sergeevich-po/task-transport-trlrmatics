@@ -101,6 +101,7 @@
                 .input {
                     width: 80%;
                     margin-right: 20px;
+                    color: rgba(255, 255, 255, 0.3);
                     cursor: pointer;
                     padding: 5px;
                     border: none;
@@ -117,6 +118,9 @@
                         color: rgb(136, 134, 134);
                         text-align: right;
                     }
+                }
+                .input.isActive {
+                    color: #000;
                 }
                 .search-form__info {
                     position: absolute;

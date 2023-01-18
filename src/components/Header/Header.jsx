@@ -18,9 +18,16 @@ export const Header = () => {
         setLimitNumberUsers(limit)
     }
 
-    const setFocutOnInput = () => {
+    const setFocutOnInput = (e) => {
         const input = document.querySelector('input');
-        input.focus()
+        input.classList.add('isActive');
+        input.focus();
+        
+        document.querySelector('.input').classList.add('isActive');
+
+        input.addEventListener('focusout',  () => { 
+                input.classList.remove('isActive')
+            });
     }
 
   return (
@@ -48,7 +55,7 @@ export const Header = () => {
                         </div>
                     </div>
                 </div>
-                <div onClick={()=>setFocutOnInput()} className="search-form">
+                <div onClick={(e)=>setFocutOnInput(e)} className="search-form">
                     <label className='search-label'>
                     <p className='search-form__info'>Поиск</p>
                 
