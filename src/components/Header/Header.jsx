@@ -11,11 +11,12 @@ import 'jspdf-autotable';
 import { getXLSXtable } from '../helpFun/getXLSXtable';
 
 export const Header = () => {
-    const {activeColumn, setLimitNumberUsers,} = useContext(UsersContext);
+    const {activeColumn, setLimitNumberUsers, setCurrentPageNumber} = useContext(UsersContext);
     
     const handleSetLimitUsersOnPage = (e) => {
         const limit = e.target.value
         setLimitNumberUsers(limit)
+        setCurrentPageNumber(1)
     }
 
     const setFocutOnInput = (e) => {
