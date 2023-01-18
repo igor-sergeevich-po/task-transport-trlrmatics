@@ -13,22 +13,21 @@ export const getXLSXtable = () => {
 
     let rezultArrayData = [columnName];
     let dataForStringArray = [];
-    let counterRows = 1;
 
-    document.querySelectorAll('#row-info').forEach((item, index) => {
-      if(index/8 === counterRows) {
-        ++counterRows;
-        rezultArrayData.push(dataForStringArray);
-        dataForStringArray = [];
-      }
-
+    document.querySelectorAll('#row-info').forEach((item) => {
       let row = {
         value: item.innerText,
         type: typeof item.innerText
       }
       dataForStringArray.push(row)
-    })
 
+      if(dataForStringArray.length === 8) {
+        rezultArrayData.push(dataForStringArray);
+        dataForStringArray = [];
+      }
+
+    })
+    console.log(rezultArrayData)
     const config = {
       filename: 'new_excel_file',
       sheet: {
