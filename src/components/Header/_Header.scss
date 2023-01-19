@@ -113,8 +113,13 @@
                     }
                     &:focus {
                         border-bottom: 2px solid rgb(92, 85, 218);
+                        &::placeholder {
+                            color: rgb(92, 85, 218);
+                        }
                     }
                     &::placeholder {
+                        transition: 0.3s;
+
                         color: rgb(136, 134, 134);
                         text-align: right;
                     }
@@ -145,6 +150,11 @@
             .search-form:hover {
                 .input {
                     border-bottom: 2px solid rgb(92, 85, 218);
+                    &::placeholder {
+                        transition: 0.3s;
+                        color: rgb(92, 85, 218);
+                        font-size: 1.1rem;
+                    }
                 }
                 .search-form__info {
                     color:rgb(92, 85, 218) ;

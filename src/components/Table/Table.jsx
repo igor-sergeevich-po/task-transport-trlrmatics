@@ -8,21 +8,13 @@ import { getSortToName } from '../helpFun/getSortToName';
 import { getSortToWebsite } from '../helpFun/getSortToWebsite';
 import { getSortToUserName } from '../helpFun/getSortToUserName';
 import { getSortToPhone } from '../helpFun/getSortToPhone';
+import { getMoreInfo } from '../helpFun/getMoreInfo';
 import { v4 as uuidv4 } from 'uuid';
-import { MoreInfoItem } from '../MoreInfoItem/MoreInfoItem';
-import { useEffect } from 'react';
 
 export const Table = () => {
-  const {actualLimitedArray, currentRowInfo, setCurrentRowInfo, userTable, dataIsSorted, setDataIsSorted, activeColumn, setActiveColumn} = useContext(UsersContext)
- 
-  const getMoreInfo = (item) => {
-    setTimeout(() => {
-     const currenUser = document.getElementById(`${item.company.name}`)
-     currenUser.classList.toggle('hidden-row')
-    }, 50)
+  const {actualLimitedArray,  setCurrentRowInfo, userTable, dataIsSorted, setDataIsSorted, activeColumn, setActiveColumn} = useContext(UsersContext)
 
-   setCurrentRowInfo(item)
-  }
+
 
   return (
       <React.Fragment>
@@ -48,7 +40,7 @@ export const Table = () => {
                 return (
                   <>
                     <tr key={uuidv4()} className={`active-line ${(isNeedIndex)? 'tr_gray': ''}`} >
-                      <th id='row-info' className="row" onClick={()=> getMoreInfo(item)}>&#10148;</th>
+                      <th id='row-info' className="row" onClick={()=> getMoreInfo(item, setCurrentRowInfo)}>&#10148;</th>
                       <td id='row-info' className="company">{item.company.name}</td>
                       <td id='row-info' className="email">{item.email}</td>
                       <td id='row-info' className="id">{item.id}</td>
