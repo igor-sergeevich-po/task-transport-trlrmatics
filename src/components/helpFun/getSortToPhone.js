@@ -12,20 +12,20 @@ export   const getSortToPhone = (e, userTable, dataIsSorted, setDataIsSorted,act
         item.classList.remove('active-column');
     });
     e.target.classList.add('active-column');
-    setActiveColumn(e.target.innerText)
+    setActiveColumn(e.target.innerText);
   if(dataIsSorted) {
-    e.target.innerText = 'phone ▲'
+    e.target.innerText = 'phone ▲';
 userTable.sort((a, b) => {
-        setDataIsSorted(false)
-        return +(a.phone.match(/[0-9]/g).join(''))- +(b.phone.match(/[0-9]/g).join(''))
+        setDataIsSorted(false);
+        return +(a.phone.match(/[0-9]/g).join(''))- +(b.phone.match(/[0-9]/g).join(''));
     })
 }
 if(!dataIsSorted) {
 
-    e.target.innerText = 'phone ▼'
+    e.target.innerText = 'phone ▼';
 userTable.sort((a, b) => {
-        setDataIsSorted(true)
-        return +(b.phone.match(/[0-9]/g).join(''))- +(a.phone.match(/[0-9]/g).join(''))
+        setDataIsSorted(true);
+        return +(b.phone.match(/[0-9]/g).join(''))- +(a.phone.match(/[0-9]/g).join(''));
     })
   }
 

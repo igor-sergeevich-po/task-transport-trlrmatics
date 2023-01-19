@@ -32,7 +32,6 @@ export const UsersProvider = ({children}) => {
     setInterval(() => {
       if(userTable.length){
         setTotalNumberUsers(userTable.length)
-        // console.log(userTable.length)
       }
     }, 150);
         
@@ -48,7 +47,7 @@ export const UsersProvider = ({children}) => {
       }, 115);
     }, [limitNumberUsers])
 
-    const value = {actualLimitedArray, currentPageNumber, setCurrentPageNumber, currentRowInfo, setCurrentRowInfo, totalNumberPages, setTotalNumberPages, limitNumberUsers, setLimitNumberUsers, totalNumberUsers, totalNumberPages, setLimitNumberUsers, userTable, setUserTable, dataIsSorted, setDataIsSorted, activeColumn, setActiveColumn};
+    const value = {actualLimitedArray, currentPageNumber, setCurrentPageNumber, currentRowInfo, setCurrentRowInfo, totalNumberPages, setTotalNumberPages, limitNumberUsers, setLimitNumberUsers, totalNumberUsers, userTable, setUserTable, dataIsSorted, setDataIsSorted, activeColumn, setActiveColumn};
 
   return (
     <UsersContext.Provider value={value}>

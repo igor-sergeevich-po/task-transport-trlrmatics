@@ -12,9 +12,7 @@ import { getMoreInfo } from '../helpFun/getMoreInfo';
 import { v4 as uuidv4 } from 'uuid';
 
 export const Table = () => {
-  const {actualLimitedArray,  setCurrentRowInfo, userTable, dataIsSorted, setDataIsSorted, activeColumn, setActiveColumn} = useContext(UsersContext)
-
-
+  const {actualLimitedArray,  setCurrentRowInfo, userTable, dataIsSorted, setDataIsSorted, activeColumn, setActiveColumn} = useContext(UsersContext);
 
   return (
       <React.Fragment>

@@ -16,32 +16,32 @@ export const getSortToUserName = (e, userTable, dataIsSorted, setDataIsSorted, s
     setActiveColumn(e.target.innerText);
 
   if(dataIsSorted) {
-    e.target.innerText = 'user-name ▼'
-    setDataIsSorted(false)
+    e.target.innerText = 'user-name ▼';
+    setDataIsSorted(false);
     userTable.sort((a,b)=> {
       const aa = a.username;
       const bb = b.username;
       if (aa > bb) {
-          return -1
+          return -1;
       } else if (aa < bb) {
-          return 1
+          return 1;
       } else {
-          return 0
+          return 0;
       }
     })
   }
   if(!dataIsSorted) {
-    e.target.innerText = 'user-name ▲'
-    setDataIsSorted(true)
+    e.target.innerText = 'user-name ▲';
+    setDataIsSorted(true);
     userTable.sort((a,b)=> {
       const aa = a.username;
       const bb = b.username;
       if (aa > bb) {
-          return 1
+          return 1;
       } else if (aa < bb) {
-          return -1
+          return -1;
       } else {
-          return 0
+          return 0;
       }
     })
   }

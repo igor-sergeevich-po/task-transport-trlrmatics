@@ -9,28 +9,12 @@ import { getFilterUsers } from '../helpFun/getFilterUsers';
 import { getPDFtable } from '../helpFun/getPDFtable';
 import 'jspdf-autotable';
 import { getXLSXtable } from '../helpFun/getXLSXtable';
+import { setFocutOnInput } from '../helpFun/setFocusOnInput';
+import { handleSetLimitUsersOnPage } from '../helpFun/handleSetLimitUsersOnPage';
 
 export const Header = () => {
     const {activeColumn, setLimitNumberUsers, setCurrentPageNumber} = useContext(UsersContext);
     
-    const handleSetLimitUsersOnPage = (e) => {
-        const limit = e.target.value
-        setLimitNumberUsers(limit)
-        setCurrentPageNumber(1)
-    }
-
-    const setFocutOnInput = (e) => {
-        const input = document.querySelector('input');
-        input.classList.add('isActive');
-        input.focus();
-        
-        document.querySelector('.input').classList.add('isActive');
-
-        input.addEventListener('focusout',  () => { 
-                input.classList.remove('isActive')
-            });
-    }
-
   return (
     <div className='wrapper'>
         <div className='header'>
@@ -38,7 +22,9 @@ export const Header = () => {
                 <div className="container">
                     <div className="pagination">
                         <p className="pagination__text">Показывать</p>
-                        <select defaultValue='10' onChange={(e) => handleSetLimitUsersOnPage(e)} className="pagination__selector"> 
+                        <select defaultValue='10' onChange={
+                            (e) => handleSetLimitUsersOnPage(e, setLimitNumberUsers,
+        setCurrentPageNumber)} className="pagination__selector"> 
                             <option  className='selector__item' value={3}>3</option> 
                             <option className='selector__item' value={5}>5</option> 
                             <option  className='selector__item' value={10}>10</option> 

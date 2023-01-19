@@ -19,7 +19,7 @@ export const getXLSXtable = () => {
         value: item.innerText,
         type: typeof item.innerText
       }
-      dataForStringArray.push(row)
+      dataForStringArray.push(row);
 
       if(dataForStringArray.length === 8) {
         rezultArrayData.push(dataForStringArray);

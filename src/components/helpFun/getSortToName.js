@@ -3,47 +3,47 @@ export const getSortToName = (e, userTable, dataIsSorted, setDataIsSorted, setAc
       if(item.classList.contains('active-column')) {
         const columnFilterName =(Array.from(
           item.innerText.matchAll(/[a-z]/g)).join('')
-          )
+          );
           
-        item.innerText = columnFilterName
+        item.innerText = columnFilterName;
     }
 
-      item.classList.remove('active-column')
+      item.classList.remove('active-column');
   });
     
     e.target.classList.add('active-column');
    
-    setActiveColumn(e.target.innerText)
+    setActiveColumn(e.target.innerText);
     
   if(dataIsSorted) {
 
-    e.target.innerText = 'name ▼'
-    setDataIsSorted(false)
+    e.target.innerText = 'name ▼';
+    setDataIsSorted(false);
     userTable.sort((a,b)=> {
       const aa = a.name;
       const bb = b.name;
       if (aa > bb) {
-          return -1
+          return -1;
       } else if (aa < bb) {
-          return 1
+          return 1;
       } else {
-          return 0
+          return 0;
       }
     })
   }
   if(!dataIsSorted) {
 
-    e.target.innerText = 'name ▲'
-    setDataIsSorted(true)
+    e.target.innerText = 'name ▲';
+    setDataIsSorted(true);
     userTable.sort((a,b)=> {
       const aa = a.name;
       const bb = b.name;
       if (aa > bb) {
-          return 1
+          return 1;
       } else if (aa < bb) {
-          return -1
+          return -1;
       } else {
-          return 0
+          return 0;
       }
     })
   }

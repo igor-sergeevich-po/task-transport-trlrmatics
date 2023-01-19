@@ -5,7 +5,7 @@ export const getSortToId = (e, userTable, dataIsSorted, setDataIsSorted, setActi
       if(item.classList.contains('active-column')) {
         const columnFilterName =(Array.from(
           item.innerText.matchAll(/[a-z]/g)).join('')
-          )
+          );
 
         item.innerText = columnFilterName;
     }
@@ -13,23 +13,20 @@ export const getSortToId = (e, userTable, dataIsSorted, setDataIsSorted, setActi
   });
    
     e.target.classList.add('active-column');
-    setActiveColumn(e.target.innerText)
+    setActiveColumn(e.target.innerText);
   if(dataIsSorted) {
-    e.target.innerText = 'id ▲'
+    e.target.innerText = 'id ▲';
     userTable.sort((a, b) => {
-      setDataIsSorted(false)
-      return a.id-b.id
+      setDataIsSorted(false);
+      return a.id-b.id;
     })
   }
   if(!dataIsSorted) {
     
-    setDataIsSorted(true)
-    e.target.innerText = 'id ▼'
+    setDataIsSorted(true);
+    e.target.innerText = 'id ▼';
     userTable.sort((a, b) => {
-   return b.id-a.id
+   return b.id-a.id;
     })
   }
-
-
-  
   }

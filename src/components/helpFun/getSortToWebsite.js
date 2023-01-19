@@ -16,32 +16,32 @@ export const getSortToWebsite = (e, userTable, dataIsSorted, setDataIsSorted, se
     setActiveColumn(e.target.innerText);
 
   if(dataIsSorted) {
-    e.target.innerText = 'website ▼'
-    setDataIsSorted(false)
+    e.target.innerText = 'website ▼';
+    setDataIsSorted(false);
     userTable.sort((a,b)=> {
       const aa = a.website;
       const bb = b.website;
       if (aa > bb) {
-          return -1
+          return -1;
       } else if (aa < bb) {
-          return 1
+          return 1;
       } else {
-          return 0
+          return 0;
       }
     })
   }
   if(!dataIsSorted) {
-    e.target.innerText = 'website ▲'
-    setDataIsSorted(true)
+    e.target.innerText = 'website ▲';
+    setDataIsSorted(true);
     userTable.sort((a,b)=> {
       const aa = a.website;
       const bb = b.website;
       if (aa > bb) {
-          return 1
+          return 1;
       } else if (aa < bb) {
-          return -1
+          return -1;
       } else {
-          return 0
+          return 0;
       }
     })
   }
