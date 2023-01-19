@@ -27,7 +27,6 @@ export const getXLSXtable = () => {
       }
 
     })
-    console.log(rezultArrayData)
     const config = {
       filename: 'new_excel_file',
       sheet: {
