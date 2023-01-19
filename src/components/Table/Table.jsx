@@ -15,7 +15,7 @@ export const Table = () => {
   const {actualLimitedArray,  setCurrentRowInfo, userTable, dataIsSorted, setDataIsSorted, activeColumn, setActiveColumn} = useContext(UsersContext);
 
   return (
-      <React.Fragment key={uuidv4()}>
+      <>
         <table className="table" id='tables'>
           <thead className='thead'>
             <tr className='thead-row'>
@@ -36,7 +36,7 @@ export const Table = () => {
                       isNeedIndex = false
                     }
                 return (
-                  <React.Fragment key={uuidv4()}>
+                  <>
                     <tr key={uuidv4()} className={`active-line ${(isNeedIndex)? 'tr_gray': ''}`} >
                       <th id='row-info' className="row" onClick={()=> getMoreInfo(item, setCurrentRowInfo)}>&#10148;</th>
                       <td id='row-info' className="company">{item.company.name}</td>
@@ -61,12 +61,12 @@ export const Table = () => {
                         </td>
                         <td colSpan='2'></td>
                     </tr>
-                  </React.Fragment>
+                  </>
             )
         })}
 
           </tbody>
         </table>
-      </React.Fragment>
+      </>
   )
 }

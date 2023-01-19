@@ -1,6 +1,7 @@
 export const getSortToCompany = (e, userTable, dataIsSorted, setDataIsSorted, setActiveColumn) => {
 
-    document.querySelectorAll('th').forEach(item => {
+    document.querySelectorAll('.th').forEach(item => {
+      console.log(item)
       if(item.classList.contains('active-column')) {
         const columnFilterName =(Array.from(
           item.innerText.matchAll(/[a-z]/g)).join('')
