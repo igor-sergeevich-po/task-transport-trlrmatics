@@ -1,6 +1,6 @@
 export const getSortToCompany = (e, userTable, dataIsSorted, setDataIsSorted, setActiveColumn) => {
 
-    document.querySelectorAll('.th').forEach(item => {
+    document.querySelectorAll('th').forEach(item => {
       console.log(item)
       if(item.classList.contains('active-column')) {
         const columnFilterName =(Array.from(
@@ -9,9 +9,8 @@ export const getSortToCompany = (e, userTable, dataIsSorted, setDataIsSorted, se
           
         item.innerText = columnFilterName;
     }
-      item.classList.remove('active-column');
-    }
-      );
+    item.classList.remove('active-column');
+  });
     e.target.classList.add('active-column');
 
     setActiveColumn(e.target.innerText);
