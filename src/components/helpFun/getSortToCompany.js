@@ -1,19 +1,18 @@
 export const getSortToCompany = (e, userTable, dataIsSorted, setDataIsSorted, setActiveColumn) => {
 
-    document.querySelectorAll('th').forEach(item => {
-      console.log(item)
-      if(item.classList.contains('active-column')) {
-        const columnFilterName =(Array.from(
-          item.innerText.matchAll(/[a-z]/g)).join('')
-          )
-          
-        item.innerText = columnFilterName;
+  document.querySelectorAll('th').forEach(item => {
+    if(item.classList.contains('active-column')) {
+      const columnFilterName = (Array.from(
+        item.innerText.matchAll(/[a-z]/g)).join('')
+        );
+        
+      item.innerText = columnFilterName;
     }
     item.classList.remove('active-column');
   });
-    e.target.classList.add('active-column');
+  e.target.classList.add('active-column');
 
-    setActiveColumn(e.target.innerText);
+  setActiveColumn(e.target.innerText);
 
   if(dataIsSorted) {
     e.target.innerText = 'company ▼';

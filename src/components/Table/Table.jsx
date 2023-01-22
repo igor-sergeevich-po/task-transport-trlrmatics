@@ -13,7 +13,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const Table = () => {
   const {actualLimitedArray,  setCurrentRowInfo, userTable, dataIsSorted, setDataIsSorted, activeColumn, setActiveColumn} = useContext(UsersContext);
-
+ 
   return (
       <>
         <table className="table" id='tables'>
@@ -32,13 +32,13 @@ export const Table = () => {
           <tbody>
               {actualLimitedArray.map((item, index) => {
                 let isNeedIndex = true
-                    if (index % 2 === 0){
-                      isNeedIndex = false
-                    }
+                  if (index % 2 === 0){
+                    isNeedIndex = false
+                  }
                 return (
                   <>
                     <tr key={uuidv4()} className={`active-line ${(isNeedIndex)? 'tr_gray': ''}`} >
-                      <th id='row-info' className="row" onClick={()=> getMoreInfo(item, setCurrentRowInfo)}>&#10148;</th>
+                      <th id='row-info' className="row" onClick={(e)=> getMoreInfo(item, setCurrentRowInfo)}>&#10148;</th>
                       <td id='row-info' className="company">{item.company.name}</td>
                       <td id='row-info' className="email">{item.email}</td>
                       <td id='row-info' className="id">{item.id}</td>
@@ -48,23 +48,10 @@ export const Table = () => {
                       <td id='row-info' className="website">{item.website}</td>
                     </tr>
                     <tr key={uuidv4()} id={item.company.name} className="ghost hidden-row">
-                        <td colSpan='2'></td>
-                        <td colSpan='2'>
-                          <p>city: {item.address.city}</p>
-                          <p>street: {item.address.street}</p>
-                          <p>suite: {item.address.suite}</p>
-                          <p>zipcode: {item.address.zipcode}</p>
-                        </td>
-                        <td colSpan='2'>
-                          <p>bs: {item.company.bs}</p>
-                          <p>catchPhrase: {item.company.catchPhrase}</p>
-                        </td>
-                        <td colSpan='2'></td>
                     </tr>
                   </>
             )
         })}
-
           </tbody>
         </table>
       </>
