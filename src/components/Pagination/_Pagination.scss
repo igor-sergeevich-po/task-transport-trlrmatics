@@ -18,9 +18,7 @@
                 transition: 0.3s;
                 text-decoration: none;
                 color: #000;
-                
             }
-         
             &:hover {
                 
                 transform: translateY(-5px);
@@ -29,16 +27,12 @@
                     color: green;
                 }
             }
-  
-           
         }
         .page-item.isDisabled {
-            // font-size: 22px;
             color: rgb(220, 101, 101);
             font-weight:100;
             &:hover {
                 cursor: default;
-                
                 
                 transform: translateY(0px);
                 .page-link {
@@ -48,9 +42,5 @@
                 }
             }
         }
-        // li.isDisabled {
-        //     // font-size: 22px;
-        //     color: white;
-        // }
     }
 }

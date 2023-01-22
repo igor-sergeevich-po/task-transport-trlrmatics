@@ -5,8 +5,8 @@
     font-family: 'Open Sans', sans-serif;
     border: 2px solid rgb(235, 234, 234);
     font-size: 14px;
-    // border-radius: 10px;
     border-spacing: 0 0;
+
     th.active-column {
         color: gold;
     }
@@ -28,7 +28,6 @@
         &:active {
             transform: rotate(90deg);
         }
-
     }
     thead tr {
         color: white;

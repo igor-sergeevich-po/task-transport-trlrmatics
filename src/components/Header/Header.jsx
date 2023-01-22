@@ -14,9 +14,10 @@ import { handleSetLimitUsersOnPage } from '../helpFun/handleSetLimitUsersOnPage'
 
 export const Header = () => {
     const {activeColumn, setLimitNumberUsers, setCurrentPageNumber} = useContext(UsersContext);
-    
+
   return (
     <div className='wrapper'>
+        <div id='loader' className="loader hide"></div>
         <div className='header'>
             <div className="header__content">
                 <div className="container">

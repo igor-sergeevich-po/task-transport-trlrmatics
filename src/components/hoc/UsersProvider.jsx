@@ -14,12 +14,13 @@ export const UsersProvider = ({children}) => {
     const [limitNumberUsers, setLimitNumberUsers] = useState(10);
     const [totalNumberPages, setTotalNumberPages] = useState(1);
 
-    const [currentPageNumber, setCurrentPageNumber] = useState(1)
+    const [currentPageNumber, setCurrentPageNumber] = useState(1);
+
+    const [loaderIsActive, setLoaderIsActive] = useState(false);
 
     const lastUserInList = currentPageNumber * limitNumberUsers;
     const firstUserInList = lastUserInList - limitNumberUsers;
     const actualLimitedArray =  userTable.slice(firstUserInList, lastUserInList)
-
 
     useEffect(() => {
 
@@ -35,8 +36,6 @@ export const UsersProvider = ({children}) => {
       }
     }, 150);
         
-       
-      
     }, [userTable])
 
     useEffect(() => {
@@ -47,7 +46,7 @@ export const UsersProvider = ({children}) => {
       }, 115);
     }, [limitNumberUsers])
 
-    const value = {actualLimitedArray, currentPageNumber, setCurrentPageNumber, currentRowInfo, setCurrentRowInfo, totalNumberPages, setTotalNumberPages, limitNumberUsers, setLimitNumberUsers, totalNumberUsers, userTable, setUserTable, dataIsSorted, setDataIsSorted, activeColumn, setActiveColumn};
+    const value = {loaderIsActive, setLoaderIsActive, actualLimitedArray, currentPageNumber, setCurrentPageNumber, currentRowInfo, setCurrentRowInfo, totalNumberPages, setTotalNumberPages, limitNumberUsers, setLimitNumberUsers, totalNumberUsers, userTable, setUserTable, dataIsSorted, setDataIsSorted, activeColumn, setActiveColumn};
 
   return (
     <UsersContext.Provider value={value}>

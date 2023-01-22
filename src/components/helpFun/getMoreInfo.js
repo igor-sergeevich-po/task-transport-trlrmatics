@@ -1,5 +1,17 @@
-export const getMoreInfo = (item, setCurrentRowInfo) => {
+export const getMoreInfo = (item, setCurrentRowInfo, loaderIsActive, setLoaderIsActive) => {
+  const loader = document.getElementById('loader');
+  const currenUser = document.getElementById(`${item.company.name}`);
+
+  if (currenUser.classList.contains('hidden-row')) {
+    loader.classList.remove('hide');
+  }
+  setTimeout(()=>{
+    if(!loaderIsActive){
+      loader.classList.add('hide');
+    }
+  },900)
   setCurrentRowInfo(item);
+  
   setTimeout(() => {
     const currenUser = document.getElementById(`${item.company.name}`);
     currenUser.classList.toggle('hidden-row');
